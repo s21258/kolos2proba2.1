@@ -14,6 +14,6 @@ namespace kolos2proba2.Models
         public string MemberNickName { get; set; }
 
         public virtual Organization Organization { get; set; }
-        public virtual IEnumerable<Membership> Membership { get; set; }
+        public virtual IEnumerable<Membership> Memberships { get; set; }
     }
 }
