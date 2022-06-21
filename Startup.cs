@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using kolos2proba2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace kolos2proba2
 {
@@ -27,7 +29,7 @@ namespace kolos2proba2
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<Models.DbContext>(opt=>{
+            services.AddDbContext<Models.TeamsDbContext>(opt=>{
                 opt.UseSqlServer(@"Data Source=host.docker.internal,1433;Initial Catalog=testdb;User ID=SA;Password=Sup3r_duper_password");
             });
             services.AddControllers();

@@ -36,7 +36,7 @@ using Microsoft.EntityFrameworkCore;
                     e.HasKey(e=>e.TeamID);
                     e.Property(e=>e.TeamName).HasMaxLength(50).IsRequired();
                     e.Property(e=>e.TeamDescription).HasMaxLength(500).IsRequired(false);
-                    e.HasOne(e=>e.Organization).WithMany(e=>e.Members).HasForeignKey(e=>e.OrganizationID).OnDelete(DeleteBehavior.ClientCascade);
+                    e.HasOne(e=>e.Organization).WithMany(e=>e.Teams).HasForeignKey(e=>e.OrganizationID).OnDelete(DeleteBehavior.ClientCascade);
                     
                 });
                 modelBuilder.Entity<Membership>(e=>{
@@ -49,7 +49,7 @@ using Microsoft.EntityFrameworkCore;
                 });
                 modelBuilder.Entity<File>(e=>{
                     e.ToTable("File");
-                    e.HasKey(e=>new{e=>FileID, e.TeamID});
+                    e.HasKey(e=>new{e.FileID, e.TeamID});
                     e.Property(e=>e.FileName).HasMaxLength(100).IsRequired();
                     e.Property(e=>e.FileExtension).HasMaxLength(4).IsRequired();
                     e.Property(e=>e.FileSize).IsRequired();
