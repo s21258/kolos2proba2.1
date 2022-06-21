@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 
     namespace kolos2proba2.Models {
-        public class DbContext : DbContext {
-            public DbContext(DbContextOptions options) : base (options) { }
+        public class TeamsDbContext : DbContext {
+            public TeamsDbContext(DbContextOptions options) : base (options) { }
     
             public DbSet<File> Files { get; set; }
             public DbSet<Member> Members { get; set; }
