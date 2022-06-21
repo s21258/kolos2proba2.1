@@ -7,6 +7,6 @@ namespace kolos2proba2.Services
 {
     public interface ITeamService
     {
-        
+        public Task AddMember(Member member);
     }
 }
