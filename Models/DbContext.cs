@@ -2,14 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace kolos2proba2.Models
-{
-    public class DbContext : using Microsoft.EntityFrameworkCore;
-    
+
     namespace kolos2proba2.Models {
         public class DbContext : DbContext {
-            public DbContext() { }
             public DbContext(DbContextOptions options) : base (options) { }
     
             public DbSet<File> Files { get; set; }
@@ -61,7 +58,3 @@ namespace kolos2proba2.Models
             }
         }
     }
-    {
-        
-    }
-}

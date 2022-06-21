@@ -12,7 +12,7 @@ namespace kolos2proba2.Models
         public string TeamName { get; set; }
         public string TeamDescription { get; set; }
         public virtual Organization Organization { get; set; }
-        public virtual IEnumerable<File> File { get; set; }
-        public virtual IEnumerable<Membership> { get; set; }
+        public virtual IEnumerable<File> Files { get; set; }
+        public virtual IEnumerable<Membership> Memberships { get; set; }
     }
 }
