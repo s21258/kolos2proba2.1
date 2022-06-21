@@ -27,6 +27,9 @@ namespace kolos2proba2
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<Models.DbContext>(opt=>{
+                opt.UseSqlServer(@"Data Source=host.docker.internal,1433;Initial Catalog=testdb;User ID=SA;Password=Sup3r_duper_password");
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
